@@ -43,7 +43,8 @@ class Dashboard extends Component {
                                     title={el.title} 
                                     author={el.username} 
                                     id={el.id}
-                                    img={el.img}/>
+                                    img={el.img}
+                                    postId={el.post_id}/>
         })
       
         return(

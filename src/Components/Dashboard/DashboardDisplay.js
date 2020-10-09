@@ -5,8 +5,9 @@ import {Link} from 'react-router-dom';
 class DashboardDisplay extends Component{
 
 render(){
+    console.log(this.props)
     return(
-        <Link to={`/post/`}>
+        <Link to={`/post/${this.props.postId}`}>
             <section>
                 <h2>{this.props.title}</h2>
                 <div className='post-by'>
