@@ -1,0 +1,30 @@
+.auth-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width:600px;
+    background-color: aqua;
+    margin: 0px 240px;
+    color: white;
+}
+img{
+    height: 100px;
+}
+
+.button-box{
+    display: flex;
+}
+
+.use-pass{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+
+input{
+    height: 20px;
+    padding: 0px 20px;
+    margin: 0px 10px;
+}

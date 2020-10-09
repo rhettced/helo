@@ -1,0 +1,15 @@
+.menu-bar{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    height: 100vh;
+}
+.menu-bar button{
+    margin: 10px 0px;
+}
+
+.menu-bar img{
+    height: 100px;
+    border-radius: 50px;
+}

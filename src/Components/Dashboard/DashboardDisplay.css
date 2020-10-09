@@ -1,0 +1,18 @@
+section {
+    display: flex;
+    justify-content: space-between;
+    line-height: 30px;
+    align-items: center;
+    width: 800px;
+    background-color: grey;
+}
+
+.post-by{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.post-by img{
+    height: 30px;
+}
