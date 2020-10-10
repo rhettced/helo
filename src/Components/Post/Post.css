@@ -1,0 +1,31 @@
+.single-post{
+    background-color: grey;
+    height: 380px;
+    width: 800px;;
+}
+
+.post-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: hotpink;
+    height: 70px;
+}
+
+.author-display{
+    display: flex;
+    align-items: center;
+}
+.author-display img{
+    height: 50px;
+    border-radius: 50%;
+}
+
+.pic-post{
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0px;
+}
+
+.pic-post img{
+    height: 285px;
+}
