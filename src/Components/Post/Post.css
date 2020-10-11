@@ -1,7 +1,8 @@
 .single-post{
     background-color: grey;
     height: 380px;
-    width: 800px;;
+    width: 800px;
+    margin: 0px 0px 300px 200px;
 }
 
 .post-header{
@@ -9,11 +10,14 @@
     justify-content: space-between;
     background-color: hotpink;
     height: 70px;
+    line-height: 70px;
+    text-align: center;
 }
 
 .author-display{
     display: flex;
     align-items: center;
+    margin: 0px 20px;
 }
 .author-display img{
     height: 50px;
@@ -28,4 +32,8 @@
 
 .pic-post img{
     height: 285px;
+}
+
+h1{
+    margin:  0px 20px;
 }

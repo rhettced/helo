@@ -30,5 +30,6 @@ app.post('/api/register',ctrl.register);
 app.post('/api/login',ctrl.login);
 app.get(`/api/logout`,ctrl.logout);
 app.get(`/api/posts`,ctrl.getAllPosts);
+app.get(`/api/posts/:postid`,ctrl.getSinglePost);
 
 app.listen(SERVER_PORT,console.log(`Bringing the wings to server ${SERVER_PORT}`));

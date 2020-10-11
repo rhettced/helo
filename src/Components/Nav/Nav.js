@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 class Nav extends Component {
     render(){
-        //console.log(this.props)
+        console.log(this.props.user.profile_pic)
         return(
             <div className='menu-bar'>
                 <img src={this.props.user.profile_pic}/>

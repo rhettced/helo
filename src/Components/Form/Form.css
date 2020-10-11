@@ -1,0 +1,40 @@
+.form-main{
+    width: 1000px;
+    height: 700px;
+    border: solid black 2px;
+    margin: 0px 100px;
+}
+
+h1{
+    text-align: left;
+    padding: 10px 0px;
+}
+
+h4{
+    text-align: left;
+    padding: 0px 45px;
+    position: relative;
+    bottom: 30px;
+}
+
+img{
+    height: 340px;
+    position: relative;
+    bottom: 25px;
+}
+input{
+    width: 870px;
+    position: relative;
+    bottom: 47px;
+    margin: 0px;
+}
+.content{
+    height: 75px;
+}
+
+.post-button{
+    position: relative;
+    left: 430px;
+    bottom: 35px;
+    width: 55px;
+}
