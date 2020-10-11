@@ -54,5 +54,14 @@ module.exports = {
         db.get_single_post({postid})
         .then(post => res.status(200).send(post))
         .catch(err => console.log(err))
+    },
+    addPost: (req,res) => {
+        const {title,img,content,id} = req.body;
+        db = req.app.get('db');
+        console.log(req.body);
+
+        db.add_post({title,img,content,id})
+        .then(post => res.status(200).send(post))
+        .catch(err => console.log(err))
     }
 }

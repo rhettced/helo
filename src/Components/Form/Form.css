@@ -3,6 +3,8 @@
     height: 700px;
     border: solid black 2px;
     margin: 0px 100px;
+    position: relative;
+    bottom: 270px;
 }
 
 h1{
@@ -17,12 +19,12 @@ h4{
     bottom: 30px;
 }
 
-img{
+.post-img{
     height: 340px;
     position: relative;
     bottom: 25px;
 }
-input{
+.form-input{
     width: 870px;
     position: relative;
     bottom: 47px;
@@ -30,6 +32,10 @@ input{
 }
 .content{
     height: 75px;
+    width: 870px;
+    position: relative;
+    bottom: 47px;
+    margin: 0px;
 }
 
 .post-button{
