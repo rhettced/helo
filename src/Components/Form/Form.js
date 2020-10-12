@@ -17,6 +17,11 @@ class Form extends Component {
         this.setState({[event.target.name]: event.target.value})
     }
 
+    componentDidMount(){
+        if(!this.props.user.id){
+            this.props.history.push('/')
+        }
+    }
     clearState = () => {
         this.setState({title: '', img: 'https://storyantics.com/images/images/en/imageNoImageSmall.gif', content: ''})
     }
@@ -29,6 +34,7 @@ class Form extends Component {
             res.sendStatus(200)
         ))
         .catch(err => console.log(err))
+        this.props.history.push('/');
         this.props.history.push('/dashboard');
         this.clearState();
     }

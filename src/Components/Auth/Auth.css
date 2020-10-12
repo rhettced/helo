@@ -1,3 +1,4 @@
+
 .auth-box{
     display: flex;
     flex-direction: column;
@@ -6,10 +7,8 @@
     height: 400px;
     width:600px;
     background-color: aqua;
-    margin: 0px 240px;
+    margin: 100px 340px;
     color: white;
-    position: relative;
-    bottom: 300px;
 }
 img{
     height: 100px;

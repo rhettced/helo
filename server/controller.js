@@ -12,13 +12,13 @@ module.exports = {
 
         let salt = bcrypt.genSaltSync(10),
             hash = bcrypt.hashSync(password, salt);
-        let profilePic = 'https://sbly-web-prod-shareably.netdna-ssl.com/wp-content/uploads/2019/02/25153627/https://www.recoveryranch.com/wp-content/uploads/2020/03/Horse.jpg.jpg.webp'
+        let profilePic = 'https://robohash.org/?set=set4'
 
         const newUser = await db.register_user({username,hash,profilePic})
         req.session.user = newUser[0];
         //console.log(newUser);
         //so when refresh page doesn't make them login
-        req.session.userid = newUser[0].id;
+        // req.session.userid = newUser[0].id;
         res.status(201).send(req.session.user);
     },
     login: async(req,res) => {
@@ -38,7 +38,7 @@ module.exports = {
         delete foundUser[0].password;
         req.session.user = foundUser[0];
         //so when refresh page doesn't make them login
-        req.session.userid = foundUser[0].id;
+        // req.session.userid = foundUser[0].id;
         res.status(200).send(req.session.user);
     },
     logout: (req,res) => {

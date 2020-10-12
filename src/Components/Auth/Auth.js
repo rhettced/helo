@@ -40,6 +40,7 @@ loginUser = () => {
     render() {
         //console.log(this.state.username)
         return (
+
             <div className='auth-box'>
                 <img src='https://www.pngitem.com/pimgs/m/127-1276046_crossed-arms-emoji-png-open-mouth-smiley-face.png' alt='logo' />
                 <h1>HELO</h1>

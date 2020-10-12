@@ -14,6 +14,7 @@ class Dashboard extends Component {
         }
     }
 
+
     handleInput = (event) => {
         this.setState({[event.target.name]: event.target.value})
     }
@@ -23,6 +24,9 @@ class Dashboard extends Component {
     }
 
     componentDidMount(){
+        if(!this.props.user.id){
+            this.props.history.push('/')
+        }
         this.getPosts();
     }
 

@@ -8,17 +8,23 @@ import Post from './Components/Post/Post';
 import Nav from './Components/Nav/Nav';
 import Form from './Components/Form/Form';
 import routes from './routes';
+import {connect} from 'react-redux'
 
 class App extends Component {
-  render(){
+  
     
+  
+  render(){
     return (
       <div className="App">
-         <Nav/>
+        {this.props.user.id? <Nav/> : null}
+         {/* <Nav/> */}
         {routes} 
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = reduxState => reduxState;
+
+export default connect(mapStateToProps)(App);

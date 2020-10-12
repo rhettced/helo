@@ -8,7 +8,7 @@ class Nav extends Component {
         console.log(this.props.user.profile_pic)
         return(
             <div className='menu-bar'>
-                <img src={this.props.user.profile_pic}/>
+                <img src={`${this.props.user.profile_pic}`}/>
                 <h4>{this.props.user.username}</h4>
                 <Link to='/dashboard'>
                     <button>Home</button>
