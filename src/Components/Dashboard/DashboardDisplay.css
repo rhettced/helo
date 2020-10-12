@@ -16,3 +16,25 @@ section {
 .post-by img{
     height: 30px;
 }
+
+.postpost{
+    margin: 7px 0px;
+}
+
+.post-title{
+    display: flex;
+    align-items: center;
+}
+
+.delete-post-button{
+    height: 20px;
+    text-align: center;
+}
+
+.box-w-delete{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: solid black 2px; */
+    width: 900px;
+}

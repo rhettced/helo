@@ -16,6 +16,9 @@ module.exports = {
 
         const newUser = await db.register_user({username,hash,profilePic})
         req.session.user = newUser[0];
+        //console.log(newUser);
+        //so when refresh page doesn't make them login
+        req.session.userid = newUser[0].id;
         res.status(201).send(req.session.user);
     },
     login: async(req,res) => {
@@ -34,6 +37,8 @@ module.exports = {
 
         delete foundUser[0].password;
         req.session.user = foundUser[0];
+        //so when refresh page doesn't make them login
+        req.session.userid = foundUser[0].id;
         res.status(200).send(req.session.user);
     },
     logout: (req,res) => {
@@ -63,5 +68,14 @@ module.exports = {
         db.add_post({title,img,content,id})
         .then(post => res.status(200).send(post))
         .catch(err => console.log(err))
+    },
+    deletePost: (req,res) => {
+        console.log(req.params);
+        const {postid} = req.params;
+        const db = req.app.get('db');
+        db.delete_post({postid})
+        .then(posts => res.status(200).send(posts))
+        .catch(err => console.log(err))
     }
+
 }

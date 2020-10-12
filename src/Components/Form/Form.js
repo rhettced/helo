@@ -29,6 +29,7 @@ class Form extends Component {
             res.sendStatus(200)
         ))
         .catch(err => console.log(err))
+        this.props.history.push('/dashboard');
         this.clearState();
     }
 

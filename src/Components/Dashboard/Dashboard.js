@@ -35,16 +35,26 @@ class Dashboard extends Component {
         .catch(err => console.log(err));
     }
 
+    deletePost = (id) => {
+        Axios.delete(`/api/posts/${id}`)
+        .then(res => {
+            this.setState({posts: res.data});
+        })
+        .catch(err => console.log(err))
+        this.getPosts();
+    }
+
     render(){
-        //console.log(this.state.search);
-        console.log(this.state.posts);
+        //console.log(this.state.posts);
+        //console.log(this.state.posts);
         let mappedPosts = this.state.posts.map((el,ind) => {
             return <DasboardDisplay key={ind} 
                                     title={el.title} 
                                     author={el.username} 
                                     id={el.id}
                                     img={el.img}
-                                    postId={el.post_id}/>
+                                    postId={el.post_id}
+                                    deletePostFn={this.deletePost}/>
         })
       
         return(

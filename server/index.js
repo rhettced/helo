@@ -32,5 +32,6 @@ app.get(`/api/logout`,ctrl.logout);
 app.get(`/api/posts`,ctrl.getAllPosts);
 app.get(`/api/posts/:postid`,ctrl.getSinglePost);
 app.post(`/api/posts`,ctrl.addPost);
+app.delete(`/api/posts/:postid`,ctrl.deletePost);
 
 app.listen(SERVER_PORT,console.log(`Bringing the wings to server ${SERVER_PORT}`));
