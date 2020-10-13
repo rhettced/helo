@@ -14,7 +14,7 @@ render(){
             <div>
                 {this.props.author === this.props.user.username? <button className='delete-post-button' onClick={()=>this.props.deletePostFn(this.props.postId)}>Delete</button> : null}
             </div>
-            <Link to={`/post/${this.props.postId}`}>
+            <Link className='link' to={`/post/${this.props.postId}`}>
                 <section className='postpost'>
                     <div className='post-title'>
                     

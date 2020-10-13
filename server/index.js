@@ -26,9 +26,10 @@ massive({
 })
 
 //endpoints
+app.get('/api/session',ctrl.getSession)
 app.post('/api/register',ctrl.register);
 app.post('/api/login',ctrl.login);
-app.get(`/api/logout`,ctrl.logout);
+app.post(`/api/logout`,ctrl.logout);
 app.get(`/api/posts`,ctrl.getAllPosts);
 app.get(`/api/posts/:postid`,ctrl.getSinglePost);
 app.post(`/api/posts`,ctrl.addPost);

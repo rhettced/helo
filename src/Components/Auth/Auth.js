@@ -3,6 +3,7 @@ import './Auth.css';
 import Axios from 'axios';
 import {connect} from 'react-redux';
 import {getUser} from '../../ducks/reducer';
+import {Redirect} from 'react-router-dom';
 
 class Auth extends Component {
    constructor(){
@@ -39,6 +40,10 @@ loginUser = () => {
 
     render() {
         //console.log(this.state.username)
+        if(this.props.user.id){
+            // return <Redirect to='/dashboard'/>
+            this.props.history.push('/dashboard');
+        }
         return (
 
             <div className='auth-box'>
@@ -63,5 +68,6 @@ loginUser = () => {
         );
     }
 }
+const mapMyStateToProps = reduxState => reduxState;
 
-export default connect(null,{getUser})(Auth);
+export default connect(mapMyStateToProps,{getUser})(Auth);

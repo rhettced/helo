@@ -16,6 +16,12 @@ img{
 
 .button-box{
     display: flex;
+    position: relative;
+    left: 25px;
+}
+
+.button-box button{
+    margin: 0px 20px;
 }
 
 .use-pass{

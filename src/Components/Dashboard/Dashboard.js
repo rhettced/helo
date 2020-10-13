@@ -30,6 +30,11 @@ class Dashboard extends Component {
         this.getPosts();
     }
 
+    checkBox = () => {
+        this.setState({userposts: !this.state.userposts});
+        console.log(this.state.userposts);
+    }
+
     getPosts = () => {
         Axios.get(`/api/posts`)
         .then(res =>{
@@ -75,7 +80,8 @@ class Dashboard extends Component {
                     <div className='right-side'>
                         <p>My Posts</p>
                         <input type='checkbox'
-                               value={this.state.userposts}/>
+                               value={this.state.userposts}
+                               onClick={this.checkBox}/>
                     </div>
                 </div>
                {mappedPosts}

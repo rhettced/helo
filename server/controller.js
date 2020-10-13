@@ -76,6 +76,13 @@ module.exports = {
         db.delete_post({postid})
         .then(posts => res.status(200).send(posts))
         .catch(err => console.log(err))
+    },
+    getSession: (req,res) => {
+        if(req.session.user){
+            res.status(200).send(req.session.user);
+        } else{
+            res.sendStatus(200);
+        }
     }
 
 }
