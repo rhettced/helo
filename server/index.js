@@ -33,7 +33,7 @@ app.post('/api/register',ctrl.register);
 app.post('/api/login',ctrl.login);
 app.post(`/api/logout`,ctrl.logout);
 app.get(`/api/posts`,ctrl.getAllPosts);
-app.get(`/api/posts/:postid`,ctrl.getSinglePost);
+app.get(`/api/post/:postid`,ctrl.getSinglePost);
 app.post(`/api/posts`,ctrl.addPost);
 app.delete(`/api/posts/:postid`,ctrl.deletePost);
 

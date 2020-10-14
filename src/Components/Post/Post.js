@@ -19,9 +19,9 @@ class Post extends Component {
     }
     
     getPost = () => {
-        Axios.get(`/api/posts/${this.props.match.params.postid}`)
+        Axios.get(`/api/post/${this.props.match.params.postid}`)
         .then(res => {
-            console.log(res.data[0])
+            //console.log(res.data[0])
             this.setState({title: res.data[0].title,
                            img: res.data[0].img,
                            content: res.data[0].content,

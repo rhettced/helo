@@ -55,7 +55,7 @@ module.exports = {
     getSinglePost: (req,res) => {
         const {postid} = req.params;
         db = req.app.get('db')
-
+        console.log(req.params);
         db.get_single_post({postid})
         .then(post => res.status(200).send(post))
         .catch(err => console.log(err))
@@ -87,10 +87,10 @@ module.exports = {
     getFilteredPosts: async(req,res) => {
         const {search, userposts} = req.query;
         const {id} = req.params;
-        console.log(req.params);
+        //console.log(req.query);
         const db = req.app.get('db');
         const sqlSearch = `%${search}%`;
-        console.log(userposts);
+        //console.log(userposts);
         if(userposts === 'false'){
             let results= await db.filtered_post_wparam({sqlSearch,id});
             res.status(200).send(results);

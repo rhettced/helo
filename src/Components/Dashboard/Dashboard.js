@@ -10,37 +10,34 @@ class Dashboard extends Component {
         this.state = {
             posts: [],
             search: '',
-            userposts: false
+            userposts: true,
+            boxChecked: 'checked'
         }
     }
-    //idk what i am doing
-    // componentDidUpdate(prevProps,prevState){
-    //     console.log(prevState.posts);
-    //     if(prevState.posts !== this.state.posts){
-    //         this.searchGetPosts();
-    //     }
-    // }
 
     handleInput = (event) => {
         this.setState({[event.target.name]: event.target.value})
     }
 
     resetBtn = () => {
-        this.setState({search: ''});
-        this.getPosts();
+        this.setState({search: '', userposts: !this.state.userposts}, () => {
+            this.searchGetPosts();
+        });
     }
 
     componentDidMount(){
         if(!this.props.user.id){
             this.props.history.push('/')
+        } else{
+            this.searchGetPosts();
         }
-        this.searchGetPosts();
     }
 
     checkBox = () => {
-        this.setState({userposts: !this.state.userposts});
-        this.searchGetPosts();
-        //console.log(this.state.userposts);
+        this.setState({userposts: !this.state.userposts},() => {
+            this.searchGetPosts();
+        });
+        console.log(this.state.userposts);
     }
 
     getPosts = () => {
@@ -73,7 +70,7 @@ class Dashboard extends Component {
     }
 
     render(){
-        //console.log(this.state.posts);
+        console.log(this.state.posts);
         //console.log(this.state.posts);
         let mappedPosts = this.state.posts.map((el,ind) => {
             return <DasboardDisplay key={ind} 
@@ -99,8 +96,9 @@ class Dashboard extends Component {
                     <div className='right-side'>
                         <p>My Posts</p>
                         <input type='checkbox'
-                               value={this.state.userposts}
-                               onClick={this.checkBox}/>
+                               checked={this.state.userposts}
+                            //    value={this.state.userposts}
+                               onChange={this.checkBox}/>
                     </div>
                 </div>
                {mappedPosts}

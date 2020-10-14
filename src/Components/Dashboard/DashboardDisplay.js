@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
 import './DashboardDisplay.css';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 class DashboardDisplay extends Component{
 
 
+postClick = () =>{
+
+}
 
 render(){
-    //console.log(this.props)
+    console.log(this.props)
     return(
-        <div className='box-w-delete'>
+        <div className='box-w-delete' onClick={this.postClick}>
             <div>
                 {this.props.author === this.props.user.username? <button className='delete-post-button' onClick={()=>this.props.deletePostFn(this.props.postId)}>Delete</button> : null}
             </div>
@@ -34,4 +37,4 @@ render(){
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps)(DashboardDisplay);
+export default withRouter(connect(mapStateToProps)(DashboardDisplay));
