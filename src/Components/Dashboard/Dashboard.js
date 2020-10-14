@@ -10,10 +10,16 @@ class Dashboard extends Component {
         this.state = {
             posts: [],
             search: '',
-            userposts: true
+            userposts: false
         }
     }
-
+    //idk what i am doing
+    // componentDidUpdate(prevProps,prevState){
+    //     console.log(prevState.posts);
+    //     if(prevState.posts !== this.state.posts){
+    //         this.searchGetPosts();
+    //     }
+    // }
 
     handleInput = (event) => {
         this.setState({[event.target.name]: event.target.value})
@@ -21,18 +27,20 @@ class Dashboard extends Component {
 
     resetBtn = () => {
         this.setState({search: ''});
+        this.getPosts();
     }
 
     componentDidMount(){
         if(!this.props.user.id){
             this.props.history.push('/')
         }
-        this.getPosts();
+        this.searchGetPosts();
     }
 
     checkBox = () => {
         this.setState({userposts: !this.state.userposts});
-        console.log(this.state.userposts);
+        this.searchGetPosts();
+        //console.log(this.state.userposts);
     }
 
     getPosts = () => {
@@ -51,6 +59,17 @@ class Dashboard extends Component {
         })
         .catch(err => console.log(err))
         this.getPosts();
+    }
+
+    searchGetPosts = () => {
+        const {id} = this.props.user;
+        const {search,userposts} = this.state;
+        Axios.get(`/api/posts/${id}?search=${search}&userposts=${userposts}`)
+        .then(res =>{
+            //console.log(res.data[0]);
+            this.setState({posts: res.data});
+        })
+        .catch(err => console.log(err))
     }
 
     render(){
@@ -74,7 +93,7 @@ class Dashboard extends Component {
                                onChange={(e) => this.handleInput(e)}
                                value={this.state.search}
                                placeholder='search by Title'/>
-                        <button>Search</button>
+                        <button onClick={this.searchGetPosts}>Search</button>
                         <button onClick={this.resetBtn}>Reset</button>
                     </div>
                     <div className='right-side'>

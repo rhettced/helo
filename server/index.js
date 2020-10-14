@@ -26,6 +26,8 @@ massive({
 })
 
 //endpoints
+app.get(`/api/posts/:id`, ctrl.getFilteredPosts);
+
 app.get('/api/session',ctrl.getSession)
 app.post('/api/register',ctrl.register);
 app.post('/api/login',ctrl.login);

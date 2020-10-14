@@ -83,6 +83,28 @@ module.exports = {
         } else{
             res.sendStatus(200);
         }
+    },
+    getFilteredPosts: async(req,res) => {
+        const {search, userposts} = req.query;
+        const {id} = req.params;
+        console.log(req.params);
+        const db = req.app.get('db');
+        const sqlSearch = `%${search}%`;
+        console.log(userposts);
+        if(userposts === 'false'){
+            let results= await db.filtered_post_wparam({sqlSearch,id});
+            res.status(200).send(results);
+        } else {
+            let results = await db.filtered_posts({sqlSearch});
+            //console.log(results);
+            res.status(200).send(results);
+        }
+        
+        
+        
+     
+
+        // db.filtered_posts({ search, })
     }
 
 }
