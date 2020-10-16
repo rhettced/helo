@@ -24,7 +24,12 @@ class Dashboard extends Component {
             this.searchGetPosts();
         });
     }
-
+    //finally works to logout user
+    componentDidUpdate(prevProps){
+        if(prevProps.user !== this.props.user){
+            this.props.history.push('/')
+        }
+    }
     componentDidMount(){
         if(!this.props.user.id){
             this.props.history.push('/')
